@@ -1,14 +1,22 @@
 import React from "react";
-import ContentViewItem from './ContentViewItem';
+import styled from 'styled-components';
+import CVItemsWrap from './CVItemsWrap';
+
+const Container = styled.div`
+  padding: 6px 4px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  min-height: 80vh;
+`;
 
 export default function ContentView(props) {
   return (
-    <div>
+    <Container>
       {props.state.map(e => {
         return (
-          <ContentViewItem key={'ContentViewItem' + e.id} state={e}/>
+          <CVItemsWrap key={'CVItemsWrap' + e.id} state={e}/>
         )
       })}
-    </div>
+    </Container>
   );
 }
